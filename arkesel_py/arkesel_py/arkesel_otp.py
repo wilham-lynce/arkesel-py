@@ -32,7 +32,7 @@ class ArkeselOtp():
 
     def sendOtp( expiry, length , medium , message , number , sender_id , type):
         header = {"api-key":API_KEY,'Content-Type': 'application/json', 'Accept':'application/json'}
-        SEND_SMS_URL = "https://sms.arkesel.com/api/otp/generate"
+        SEND_OTP_URL = "https://sms.arkesel.com/api/otp/generate"
 
         payload ={
             "expiry": expiry,
@@ -44,19 +44,19 @@ class ArkeselOtp():
             "type": type
         }
     
-        response = requests.post(SEND_SMS_URL, headers=header,json=payload)
+        response = requests.post(SEND_OTP_URL, headers=header,json=payload)
         print (response.text.encode('utf8'))
     # sendOtp( 5, 6, "sms","This is OTP from Source, %otp_code%","233248649732","Source","numeric")
     
     def verifyOtp(code , number):
         header = {"api-key":API_KEY,'Content-Type': 'application/json', 'Accept':'application/json'}
-        SEND_SMS_URL = "https://sms.arkesel.com/api/otp/verify"
+        VERIFY_OTP_URL = "https://sms.arkesel.com/api/otp/verify"
 
         payload ={
             "number": number,
             "code" : code
         }
     
-        response = requests.post(SEND_SMS_URL, headers=header,json=payload)
+        response = requests.post(VERIFY_OTP_URL, headers=header,json=payload)
         print (response.text.encode('utf8'))
     # verifyOtp(code , number)
