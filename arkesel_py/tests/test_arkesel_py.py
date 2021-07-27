@@ -7,6 +7,7 @@ import pytest
 from click.testing import CliRunner
 
 from arkesel_py import arkesel_py
+from arkesel_py import arkesel_info
 from arkesel_py import cli
 
 
