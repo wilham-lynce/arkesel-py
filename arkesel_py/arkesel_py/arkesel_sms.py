@@ -80,3 +80,29 @@ class ArkeselSMS(object):
         }
         response = requests.post(SEND_SMS_URL, headers=header,json=payload)
         print (response.status_code)
+    
+
+    def voice_sms(voice_file:str, recipients:array.array):
+       URL = "https://sms.arkesel.com/api/v2/sms/voice/send"
+       header = {"api-key":API_KEY , 'Content-Type': 'application/json', 'Accept':'application/json'}
+       payload={
+           "voice_file":voice_file,
+           "recipients":recipients
+       }
+       response = requests.post(URL, headers=header,json=payload)
+       print(response.text)
+
+   
+    
+    def send_group_sms(sender:str , group_name:str , message:str):
+        URL = "https://sms.arkesel.com/api/v2/sms/send/contact-group"
+        header = {"api-key":API_KEY , 'Content-Type': 'application/json', 'Accept':'application/json'}
+        payload ={
+            "sender":sender,
+            "group_name":group_name,
+            "message":message,
+        }
+
+        response = requests.post(URL, headers=header,json=payload)
+        print (response.text)
+    # send_group_sms("test","TEST GROUP","Here's a message")
