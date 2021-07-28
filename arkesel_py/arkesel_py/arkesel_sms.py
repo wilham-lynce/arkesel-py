@@ -67,8 +67,6 @@ class ArkeselSMS(object):
     # scheduledSms('Trial','just trying this',['0248649732'],"2021-06-14 08:50 AM")
 
 
-
-    
     
     def  webhookSms(sender:str, message:str, recipients:array.array, callback_url:str):
         header = {"api-key":API_KEY , 'Content-Type': 'application/json', 'Accept':'application/json'}
