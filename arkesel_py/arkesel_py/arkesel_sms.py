@@ -52,7 +52,7 @@ class ArkeselSMS(object):
     
     
     
-    def scheduledSms(sender:str,message:str,recipients:array.array,scheduled_date:str):
+    def scheduledSms(sender:str,message:str,recipients:array.array,scheduled_date:datetime):
         header = {"api-key":API_KEY , 'Content-Type': 'application/json', 'Accept':'application/json'}
         SEND_SMS_URL = "https://sms.arkesel.com/api/v2/sms/send"
 
@@ -63,8 +63,8 @@ class ArkeselSMS(object):
             "scheduled_date" : scheduled_date
         }
         response = requests.post(SEND_SMS_URL, headers=header,json=payload)
-        print (response.status_code)
-    # scheduledSms('Trial','just trying this',['0248649732'],"2021-06-14 08:50 AM")
+        print (response.text)
+    scheduledSms('Trial','just trying this',['0248649732'],"2021-08-02 04:40 AM")
 
 
     
