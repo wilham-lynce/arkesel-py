@@ -1,8 +1,5 @@
 import os
 import requests
-import array
-import json
-import datetime 
 
 from dotenv import load_dotenv
 load_dotenv()
@@ -28,8 +25,6 @@ session.params['api_key'] = API_KEY
 
 class Info(object):
     def __init__(self) :
-        # self.message_id = message_id
-        # self.recipients = array.array(recipients)
         pass
            
        
@@ -52,32 +47,4 @@ class Info(object):
         print (response.text.encode('utf8'))
     # smsDetails("https://sms.arkesel.com/api/v2/sms"/Your MESSAGE_ID)
 
-
-    def create_contact_group(group_name:str):
-        URL = "https://sms.arkesel.com/api/v2/contacts/groups"
-        header = {"api-key":API_KEY , 'Content-Type': 'application/json', 'Accept':'application/json'}
-        
-        payload ={
-            "group_name":group_name   
-        }
-        response =  requests.post(URL , headers=header , json=payload)
-        print (response.text)
-    # create_contact_group("TEST GROUP")
-    
-    def add_contact_to_group(group_name:str , contacts:array.array):
-        URL = "https://sms.arkesel.com/api/v2/contacts" 
-        header = {"api-key":API_KEY , 'Content-Type': 'application/json', 'Accept':'application/json'}
-
-        payload ={
-            "group_name":group_name,
-            "contacts":contacts
-        }
-        response = requests.post(URL , headers=header , json=payload)
-        print (response.text)
-    # add_contact_to_group("TEST GROUP" , [{
-    #                         "phone_number": "233248649732"
-    #                         },
-    #                         {
-    #                         "phone_number": "233202087572"
-    #                         } ])
     
