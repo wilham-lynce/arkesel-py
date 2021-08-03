@@ -30,7 +30,7 @@ class ArkeselOtp():
     def __init__(self) -> None:
         pass
 
-    def sendOtp( expiry, length , medium , message , number , sender_id , type):
+    def sendOtp(self, expiry, length , medium , message , number , sender_id , type):
         header = {"api-key":API_KEY,'Content-Type': 'application/json', 'Accept':'application/json'}
         SEND_OTP_URL = "https://sms.arkesel.com/api/otp/generate"
 
@@ -48,7 +48,7 @@ class ArkeselOtp():
         print (response.text.encode('utf8'))
     # sendOtp( 5, 6, "sms","This is OTP from Source, %otp_code%","233248649732","Source","numeric")
     
-    def verifyOtp(code , number):
+    def verifyOtp(self , code , number):
         header = {"api-key":API_KEY,'Content-Type': 'application/json', 'Accept':'application/json'}
         VERIFY_OTP_URL = "https://sms.arkesel.com/api/otp/verify"
 

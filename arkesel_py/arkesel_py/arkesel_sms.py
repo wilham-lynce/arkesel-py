@@ -2,7 +2,6 @@ import os
 import requests
 import array
 import json
-import datetime 
 
 from dotenv import load_dotenv
 load_dotenv()
@@ -32,7 +31,7 @@ class ArkeselSMS(object):
         # self.recipients = array.array(recipients)
         pass
     
-    def sendSms(sender:str, message: str, recipients: array.array ):
+    def sendSms(self,sender:str, message: str, recipients: array.array ):
         header = {"api-key":API_KEY , 'Content-Type': 'application/json', 'Accept':'application/json'}
         SEND_SMS_URL = "https://sms.arkesel.com/api/v2/sms/send"
 
@@ -43,6 +42,7 @@ class ArkeselSMS(object):
         }
 
         response = requests.post(SEND_SMS_URL, headers=header,json=payload)
+        # return response.json()
         print (response.text.encode('utf8'))
         # print(response.status_code)
     # sendSms('Trial','just trying this',['233248649732'])
@@ -52,7 +52,7 @@ class ArkeselSMS(object):
     
     
     
-    def scheduledSms(sender:str,message:str,recipients:array.array,scheduled_date:datetime):
+    def scheduledSms(self , sender:str,message:str,recipients:array.array,scheduled_date:str):
         header = {"api-key":API_KEY , 'Content-Type': 'application/json', 'Accept':'application/json'}
         SEND_SMS_URL = "https://sms.arkesel.com/api/v2/sms/send"
 
@@ -64,11 +64,11 @@ class ArkeselSMS(object):
         }
         response = requests.post(SEND_SMS_URL, headers=header,json=payload)
         print (response.text)
-    scheduledSms('Trial','just trying this',['0248649732'],"2021-08-02 04:40 AM")
+    # scheduledSms('Trial','just trying this',['0248649732'],"2021-08-02 12:07 PM")
 
 
     
-    def  webhookSms(sender:str, message:str, recipients:array.array, callback_url:str):
+    def  webhookSms(self , sender:str, message:str, recipients:array.array, callback_url:str):
         header = {"api-key":API_KEY , 'Content-Type': 'application/json', 'Accept':'application/json'}
         SEND_SMS_URL = "https://sms.arkesel.com/api/v2/sms/send"
 
@@ -82,7 +82,7 @@ class ArkeselSMS(object):
         print (response.status_code)
     
 
-    def voice_sms(voice_file:str, recipients:array.array):
+    def voice_sms(self , voice_file:str, recipients:array.array):
        URL = "https://sms.arkesel.com/api/v2/sms/voice/send"
        header = {"api-key":API_KEY , 'Content-Type': 'application/json', 'Accept':'application/json'}
        payload={
@@ -94,7 +94,7 @@ class ArkeselSMS(object):
 
    
     
-    def send_group_sms(sender:str , group_name:str , message:str):
+    def send_group_sms(self, sender:str , group_name:str , message:str):
         URL = "https://sms.arkesel.com/api/v2/sms/send/contact-group"
         header = {"api-key":API_KEY , 'Content-Type': 'application/json', 'Accept':'application/json'}
         payload ={
@@ -106,3 +106,26 @@ class ArkeselSMS(object):
         response = requests.post(URL, headers=header,json=payload)
         print (response.text)
     # send_group_sms("test","TEST GROUP","Here's a message")
+
+
+class SmsInfo(object):
+    def __init__(self) :
+        pass
+           
+       
+    def smsBalance(self):
+        header = {"api-key":API_KEY ,  'Content-Type': 'application/json', 'Accept':'application/json'}
+        BALANCE_URL =   "https://sms.arkesel.com/api/v2/clients/balance-details"
+        response = session.get(BALANCE_URL,headers=header)
+        print (response.text.encode('utf8'))
+        # return response.json()
+
+
+
+
+    def smsDetails(self, DETAILS_URL):
+        # DETAILS_URL = "https://sms.arkesel.com/api/v2/sms"/MESSAGE_ID
+        header = {"api-key":API_KEY , 'Content-Type': 'application/json', 'Accept':'application/json'}
+        response =  requests.get(DETAILS_URL , headers=header)
+        print (response.text.encode('utf8'))
+    # smsDetails("https://sms.arkesel.com/api/v2/sms/15332050")
