@@ -38,7 +38,7 @@ setup(
     license="MIT license",
     long_description=readme + '\n\n' + history,
     include_package_data=True,
-    keywords='arkesel_py',
+    keywords=['arkesel_py','arkesel'],
     name='arkesel_py',
     packages=find_packages(include=['arkesel_py', 'arkesel_py.*']),
     test_suite='tests',
