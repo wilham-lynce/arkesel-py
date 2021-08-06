@@ -32,7 +32,7 @@ Documentation
 --------
 
 * The documentation for the Arkesel API can be found here https://developers.arkesel.com.
-* The documentation for the Arkesel Python library documentation can be found here. 
+* The documentation for the Arkesel Python library documentation can be found here https://arkesel-py.readthedocs.io. 
 
 Credits
 -------
