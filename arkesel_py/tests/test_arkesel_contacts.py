@@ -6,8 +6,7 @@ import pytest
 
 from click.testing import CliRunner
 
-from arkesel_py import arkesel_py
-from arkesel_py import arkesel_info
+# from arkesel_py.arkesel_contacts import Contacts
 from arkesel_py import cli
 
 
@@ -36,3 +35,4 @@ def test_command_line_interface():
     help_result = runner.invoke(cli.main, ['--help'])
     assert help_result.exit_code == 0
     assert '--help  Show this message and exit.' in help_result.output
+    

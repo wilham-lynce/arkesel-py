@@ -45,7 +45,8 @@ class ArkeselOtp():
         }
     
         response = requests.post(SEND_OTP_URL, headers=header,json=payload)
-        print (response.text.encode('utf8'))
+        return response.json()
+        #  print (response.text.encode('utf8'))
     # sendOtp( 5, 6, "sms","This is OTP from Source, %otp_code%","233248649732","Source","numeric")
     
     def verifyOtp(self , code , number):
@@ -58,5 +59,6 @@ class ArkeselOtp():
         }
     
         response = requests.post(VERIFY_OTP_URL, headers=header,json=payload)
-        print (response.text.encode('utf8'))
+        return response.json()
+        # print (response.text.encode('utf8'))
     # verifyOtp(code , number)

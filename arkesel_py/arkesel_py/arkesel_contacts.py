@@ -12,6 +12,7 @@ API_KEY = os.getenv('ARKESEL_API_KEY')
 class APIKeyMissingError(Exception):
     pass
 
+
 if API_KEY is None:
     raise APIKeyMissingError(
         "All methods require an API key. See "
@@ -24,9 +25,11 @@ session = requests.Session()
 session.params = {}
 session.params['api_key'] = API_KEY
 
+
 class Contacts(object):
     def __init__(self) :
         pass
+
 
     def create_contact_group(group_name:str):
         URL = "https://sms.arkesel.com/api/v2/contacts/groups"
@@ -36,7 +39,8 @@ class Contacts(object):
             "group_name":group_name   
         }
         response =  requests.post(URL , headers=header , json=payload)
-        print (response.text)
+        return response.json()
+        # print (response.text)
     # create_contact_group("TEST GROUP")
     
     def add_contact_to_group(group_name:str , contacts:array.array):
@@ -48,7 +52,8 @@ class Contacts(object):
             "contacts":contacts
         }
         response = requests.post(URL , headers=header , json=payload)
-        print (response.text)
+        return response.json()
+        # print (response.text)
     # add_contact_to_group("TEST GROUP" , [{
     #                         "phone_number": "233248649732"
     #                         },
