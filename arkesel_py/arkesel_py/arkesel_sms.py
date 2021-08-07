@@ -60,7 +60,7 @@ class ArkeselSMS(object):
     # scheduledSms('Trial','just trying this',['0248649732'],"2021-08-02 12:07 PM")
 
  
-    def  webhookSms(self , sender:str, message:str, recipients:array.array, callback_url:str):
+    def webhookSms(self , sender:str, message:str, recipients:array.array, callback_url:str):
         header = {"api-key":API_KEY , 'Content-Type': 'application/json', 'Accept':'application/json'}
         SEND_SMS_URL = "https://sms.arkesel.com/api/v2/sms/send"
 
@@ -73,6 +73,22 @@ class ArkeselSMS(object):
         response = requests.post(SEND_SMS_URL, headers=header,json=payload)
         # print (response.status_code)
         return response.json()
+    
+    
+    def sandBox(self , sender:str, message:str, recipients:array.array, sandbox:bool):
+        header = {"api-key":API_KEY , 'Content-Type': 'application/json', 'Accept':'application/json'}
+        SEND_SMS_URL = "https://sms.arkesel.com/api/v2/sms/send"
+
+        payload ={
+            "sender":sender,
+            "message":message,
+            "recipients": recipients,
+            "sandbox" : sandbox
+        }
+        response = requests.post(SEND_SMS_URL, headers=header,json=payload)
+        # print (response.status_code)
+        return response.json()
+
 
     def voice_sms(self , voice_file:str, recipients:array.array):
        URL = "https://sms.arkesel.com/api/v2/sms/voice/send"
