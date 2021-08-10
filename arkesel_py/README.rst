@@ -1,6 +1,6 @@
-==========
+===========
 arkesel-py
-==========
+===========
 
 
 .. image:: https://img.shields.io/pypi/v/arkesel_py.svg
@@ -23,16 +23,17 @@ A Python library for the Arkesel API
 * Documentation: https://arkesel-py.readthedocs.io.
 
 
-Arkesel API Library 
--------
+Arkesel API Python Library 
+----------------------------
 
-A Python library for the Arkesel API. Allows you to do anything the Arkesel API does, but from within Python apps – send bulk messages , send OTP for phone number verifications, authenticate phonenumbers/users , etc.
+A Python library for the Arkesel API. Allows you to do anything the Arkesel API does, but from within Python apps – send bulk messages , send OTP for phone-number/users authentication, creating and adding contacts to yout groups etc.
 
 Documentation
---------
+---------------
 
-* The documentation for the Arkesel API can be found here https://developers.arkesel.com.
-* The documentation for the Arkesel Python library documentation can be found here https://arkesel-py.readthedocs.io. 
+* The documentation for the Arkesel API can be found `here <https://developers.arkesel.com>`_ 
+* The documentation for the Arkesel Python library documentation can be found `here <https://arkesel-py.readthedocs.io>`__
+
 
 Credits
 -------
