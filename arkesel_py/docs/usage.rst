@@ -9,7 +9,7 @@ To send SMS in a project using Arkesel::
     from arkesel_py.arkesel_py import ArkeselOTP
     from arkesel_py.arkesel_py import Contacts
 
-#. ArkeselSMS::
+#. class ArkeselSMS has the following methods::
 
        sendSms
        scheduledSms
@@ -18,12 +18,12 @@ To send SMS in a project using Arkesel::
        voiceSms
        send_group_sms
 
-#. ArkeselOTP::
+#. class ArkeselOTP has the following methods::
 
        sendOtp
        verifyOtp
    
-#. SmsInfo::
+#. class SmsInfo has the following methods::
 
        smsBalance 
        smsDetails 
@@ -31,6 +31,8 @@ To send SMS in a project using Arkesel::
 
 Sending Bulk SMS::
 
+
+    
     def sendBulkText():
         letter = ArkeselSMS()
         print (letter.sendSms("user" , "example text" , ["0XXXXXXXXX"]))
