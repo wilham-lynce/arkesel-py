@@ -1,0 +1,77 @@
+Metadata-Version: 2.1
+Name: arkesel-py
+Version: 0.1.0
+Summary: A Python library for the Arkesel API 
+Home-page: https://github.com/wilham-lynce/arkesel_py
+Author: Wilham Opoku Danquah
+Author-email: wilhamlynce27@gmail.com
+License: MIT license
+Keywords: arkesel_py,arkesel
+Platform: UNKNOWN
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Requires-Python: >=3.6
+License-File: LICENSE
+
+===========
+arkesel-py
+===========
+
+
+.. image:: https://img.shields.io/pypi/v/arkesel_py.svg
+        :target: https://pypi.python.org/pypi/arkesel_py
+
+.. image:: https://img.shields.io/travis/wilham-lynce/arkesel_py.svg
+        :target: https://travis-ci.com/wilham-lynce/arkesel_py
+
+.. image:: https://readthedocs.org/projects/arkesel-py/badge/?version=latest
+        :target: https://arkesel-py.readthedocs.io/en/latest/?version=latest
+        :alt: Documentation Status
+
+
+
+
+A Python library for the Arkesel API 
+
+
+* Free software: MIT license
+* Documentation: https://arkesel-py.readthedocs.io.
+
+
+Arkesel API Python Library 
+----------------------------
+
+A Python library for the Arkesel API. Allows you to do anything the Arkesel API does, but from within Python apps – send bulk messages , send OTP for phone-number/users authentication, creating and adding contacts to yout groups etc.
+
+Documentation
+---------------
+
+* The documentation for the Arkesel API can be found `here <https://developers.arkesel.com>`_ 
+* The documentation for the Arkesel Python library documentation can be found `here <https://arkesel-py.readthedocs.io>`__
+
+
+Credits
+-------
+
+This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
+
+.. _Cookiecutter: https://github.com/audreyr/cookiecutter
+.. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
+
+
+=======
+History
+=======
+
+0.1.0 (2021-07-21)
+------------------
+
+* First release on PyPI.
+
+

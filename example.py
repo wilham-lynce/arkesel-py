@@ -1,6 +1,6 @@
-from arkesel_py.arkesel_py import ArkeselSMS
-from arkesel_py.arkesel_py import SmsInfo
-from arkesel_py.arkesel_py import ArkeselOtp
+from arkesel_py import ArkeselSMS
+from arkesel_py import SmsInfo
+from arkesel_py import ArkeselOtp
 
 
 def sendBulkText():
